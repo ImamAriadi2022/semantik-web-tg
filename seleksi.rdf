@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/university_admission#"
+     xml:base="http://www.example.org/university_admission"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Definisi Kelas sebagai RDF Resource -->
+    <rdf:Description rdf:about="#Siswa"/>
+    <rdf:Description rdf:about="#PerguruanTinggi"/>
+    <rdf:Description rdf:about="#JalurPendaftaran"/>
+    <rdf:Description rdf:about="#SNBP"/>
+    <rdf:Description rdf:about="#SNBT"/>
+    <rdf:Description rdf:about="#Mandiri"/>
+    <rdf:Description rdf:about="#HasilSeleksi"/>
+
+    <!-- Hirarki Kelas -->
+    <rdf:Description rdf:about="#SNBP">
+        <rdfs:subClassOf rdf:resource="#JalurPendaftaran"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SNBT">
+        <rdfs:subClassOf rdf:resource="#JalurPendaftaran"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Mandiri">
+        <rdfs:subClassOf rdf:resource="#JalurPendaftaran"/>
+    </rdf:Description>
+
+    <!-- Properti Relasional -->
+    <rdf:Description rdf:about="#mendaftarKe">
+        <rdfs:domain rdf:resource="#Siswa"/>
+        <rdfs:range rdf:resource="#JalurPendaftaran"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#dapatMengikuti">
+        <rdfs:domain rdf:resource="#Siswa"/>
+        <rdfs:range rdf:resource="#SNBT"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#memilikiHasil">
+        <rdfs:domain rdf:resource="#JalurPendaftaran"/>
+        <rdfs:range rdf:resource="#HasilSeleksi"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#diterimaDi">
+        <rdfs:domain rdf:resource="#Siswa"/>
+        <rdfs:range rdf:resource="#PerguruanTinggi"/>
+    </rdf:Description>
+
+    <!-- Individu dan Hubungan -->
+    <rdf:Description rdf:about="#Siswa1">
+        <rdf:type rdf:resource="#Siswa"/>
+        <mendaftarKe rdf:resource="#SNBP2025"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SNBP2025">
+        <rdf:type rdf:resource="#SNBP"/>
+        <memilikiHasil rdf:resource="#TidakLolos"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Siswa1">
+        <dapatMengikuti rdf:resource="#SNBT2025"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#SNBT2025">
+        <rdf:type rdf:resource="#SNBT"/>
+        <memilikiHasil rdf:resource="#Lolos"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Siswa1">
+        <diterimaDi rdf:resource="#UniversitasX"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#UniversitasX">
+        <rdf:type rdf:resource="#PerguruanTinggi"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Lolos">
+        <rdf:type rdf:resource="#HasilSeleksi"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#TidakLolos">
+        <rdf:type rdf:resource="#HasilSeleksi"/>
+    </rdf:Description>
+
+</rdf:RDF>

@@ -1,0 +1,13 @@
+digraph {
+	Siswa [label=Siswa fillcolor=lightblue shape=box style=filled]
+	PerguruanTinggi [label="Perguruan Tinggi" fillcolor=lightblue shape=box style=filled]
+	JalurPendaftaran [label="Jalur Pendaftaran" fillcolor=lightblue shape=box style=filled]
+	SNBP [label=SNBP fillcolor=lightblue shape=box style=filled]
+	SNBT [label=SNBT fillcolor=lightblue shape=box style=filled]
+	Mandiri [label=Mandiri fillcolor=lightblue shape=box style=filled]
+	HasilSeleksi [label="Hasil Seleksi" fillcolor=lightblue shape=box style=filled]
+	Siswa -> JalurPendaftaran [label=mendaftarKe]
+	Siswa -> SNBT [label=dapatMengikuti]
+	JalurPendaftaran -> HasilSeleksi [label=memilikiHasil]
+	Siswa -> PerguruanTinggi [label=diterimaDi]
+}

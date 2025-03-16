@@ -1,0 +1,31 @@
+@prefix ex: <http://example.com/seleksi#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Definisi Kelas (Classes)
+ex:Siswa a owl:Class .
+ex:Seleksi a owl:Class .
+ex:SNBT a owl:Class .
+ex:SNBP a owl:Class .
+ex:Mandiri a owl:Class .
+ex:Kampus a owl:Class .
+
+# Definisi Properti (Properties)
+ex:mengikuti a owl:ObjectProperty ;
+    rdfs:domain ex:Siswa ;
+    rdfs:range ex:Seleksi .
+
+ex:memilih a owl:ObjectProperty ;
+    rdfs:domain ex:Siswa ;
+    rdfs:range ex:Kampus .
+
+# Contoh Data (Instances)
+ex:Ani a ex:Siswa .
+ex:Universitas_A a ex:Kampus .
+ex:SNBT_2025 a ex:SNBT .
+
+# Hubungan Antar Entitas
+ex:Ani ex:mengikuti ex:SNBT_2025 .
+ex:Ani ex:memilih ex:Universitas_A .

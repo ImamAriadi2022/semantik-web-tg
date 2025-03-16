@@ -1,8 +1,8 @@
 # semantik-web-tg
 
-anggota kelompok
-Imam Ariadi (225061042)
-Ghebi Armando ( 225061)
+anggota kelompok <br>
+Imam Ariadi (225061042)<br>
+Ghebi Armando ( 225061)<br>
 Nur Emy Ramadhani (2215061027)
 
 link docs
